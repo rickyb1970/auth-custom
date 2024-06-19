@@ -1,5 +1,7 @@
 @extends('mainLayout')
 
+@section('page-title','Account Registration')
+
 @section('auth-content')
     <form method="POST" action="{{ route('register') }}">
         @csrf
