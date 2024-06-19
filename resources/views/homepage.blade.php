@@ -1,5 +1,7 @@
+@extends('mainLayout')
+
+@section('page-content')
 <h1>Welcome to the Site</h1>
-<br>
 <br>
 {{-- <a href="{{ route('logout') }}">Logout</a> --}}
 <form action="{{ route('logout') }}">
@@ -8,3 +10,4 @@
         Logout
     </button>
 </form>
+@endsection

@@ -21,7 +21,11 @@ class AuthController extends Controller
 
         // $email = 'user@domain.com';
 
-        $email = fake()->unique()->safeEmail();
+        if($request->generate_email || ($request->email && $request->generate_email)){
+             $email = fake()->unique()->safeEmail();
+        } else {
+            $email = $request->email;
+        }
 
         $request->validate([
             'name' => 'required|string|max:255|unique:users',
